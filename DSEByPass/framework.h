@@ -32,7 +32,7 @@
 
 
 
-
+#pragma comment(lib,".\\lib\\diaguids.lib")
 
 
 

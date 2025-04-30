@@ -19,6 +19,7 @@ public:
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
+	void SetControlItemPos();
 	Gdiplus::Bitmap* m_pBgBitmap;  // 背景图像对象
 	CProgressCtrl m_Progress;
 	CStatic m_ProgressText;

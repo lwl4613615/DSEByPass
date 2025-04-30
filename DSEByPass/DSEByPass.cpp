@@ -7,6 +7,7 @@
 #include "DSEByPass.h"
 #include "DSEByPassDlg.h"
 #include "CDownloadDlg.h"
+#include"Utils.h"
 #include<gdiplus.h>
 #pragma comment(lib, "gdiplus.lib")
 ULONG_PTR m_gdiplusToken;
@@ -46,6 +47,7 @@ BOOL CDSEByPassApp::InitInstance()
 
 	Gdiplus::GdiplusStartupInput gdiplusStartupInput;
 	Gdiplus::GdiplusStartup(&m_gdiplusToken, &gdiplusStartupInput, NULL);
+	Utils::EnableDebugPrivilege();
 	// 如果应用程序存在以下情况，Windows XP 上需要 InitCommonControlsEx()
 	// 使用 ComCtl32.dll 版本 6 或更高版本来启用可视化方式，
 	//则需要 InitCommonControlsEx()。  否则，将无法创建窗口。
@@ -76,7 +78,10 @@ BOOL CDSEByPassApp::InitInstance()
 	// TODO: 应适当修改该字符串，
 	// 例如修改为公司或组织名
 	SetRegistryKey(_T("应用程序向导生成的本地应用程序"));
+	
+	
 	CDownloadDlg loadingDlg;
+
 	loadingDlg.DoModal(); // 显示加载对话框
 
 
